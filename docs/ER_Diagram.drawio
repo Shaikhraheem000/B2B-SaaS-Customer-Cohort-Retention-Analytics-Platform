@@ -1,0 +1,88 @@
+                               +-----------------------------+
+                               |    marketing_campaigns      |
+                               +-----------------------------+
+                               | PK campaign_id              |
+                               | campaign_name              |
+                               | channel                    |
+                               | campaign_type              |
+                               | start_date                 |
+                               | end_date                   |
+                               | budget_usd                 |
+                               | impressions                |
+                               | clicks                     |
+                               | conversions                |
+                               +-------------+--------------+
+                                             |
+                                             | 1
+                                             |
+                                             | N
++--------------------------------------------------------------------------+
+|                              accounts                                    |
++--------------------------------------------------------------------------+
+| PK account_id                                                            |
+| account_name                                                             |
+| industry                                                                 |
+| country                                                                  |
+| signup_date                                                              |
+| referral_source                                                          |
+| campaign_id (FK)                                                         |
+| plan_tier                                                                |
+| seats                                                                    |
+| is_trial                                                                 |
+| churn_flag                                                               |
++----------------------+--------------------------+-------------------------+
+                       |                          |
+                  1    |                     1    |
+                       |                          |
+                       | N                        | N
+                       |                          |
+                       |                          |
+      +----------------v-------------+    +-------v--------------------+
+      |      subscriptions           |    |     support_tickets        |
+      +------------------------------+    +----------------------------+
+      | PK subscription_id           |    | PK ticket_id               |
+      | FK account_id                |    | FK account_id              |
+      | start_date                   |    | submitted_at               |
+      | end_date                     |    | closed_at                  |
+      | plan_tier                    |    | resolution_time_hours      |
+      | seats                        |    | priority                   |
+      | mrr_amount                   |    | first_response_time_minutes|
+      | arr_amount                   |    | satisfaction_score         |
+      | is_trial                     |    | escalation_flag            |
+      | upgrade_flag                 |    +----------------------------+
+      | downgrade_flag               |
+      | churn_flag                   |
+      | billing_frequency            |
+      | auto_renew_flag              |
+      +--------------+---------------+
+                     |
+                1    |
+                     |
+                     | N
+                     |
+      +--------------v------------------+
+      |         feature_usage           |
+      +---------------------------------+
+      | PK usage_id                     |
+      | FK subscription_id              |
+      | usage_date                      |
+      | feature_name                    |
+      | usage_count                     |
+      | usage_duration_secs             |
+      | error_count                     |
+      | is_beta_feature                 |
+      +---------------------------------+
+
++--------------------------------------------------------+
+|                   churn_events                         |
++--------------------------------------------------------+
+| PK churn_event_id                                      |
+| FK account_id                                          |
+| churn_date                                             |
+| reason_code                                            |
+| refund_amount_usd                                      |
+| preceding_upgrade_flag                                 |
+| preceding_downgrade_flag                               |
+| is_reactivation                                        |
+| feedback_text                                          |
++--------------------------------------------------------+
