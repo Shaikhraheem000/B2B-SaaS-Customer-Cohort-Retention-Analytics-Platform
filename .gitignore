@@ -1,1 +1,7 @@
-data/raw/
+# Data files
+data/raw/*
+!data/raw/marketing_campaigns.csv
+data/cleaned/
+.ipynb_checkpoints/
+__pycache__/
+*.pyc
