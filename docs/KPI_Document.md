@@ -133,14 +133,15 @@ This document defines the Key Performance Indicators (KPIs) used to measure busi
 |------|-------------|
 | Total Campaigns | Number of marketing campaigns |
 | Campaign Budget | Total marketing spend |
-| Total Conversions | Customers acquired from campaigns |
-| Conversion Rate | Percentage of visitors converted |
-| Cost Per Acquisition (CPA) | Cost to acquire one customer |
-| Customer Acquisition Cost (CAC) | Average acquisition cost per customer |
-| Return on Ad Spend (ROAS) | Revenue generated per marketing dollar |
-| Revenue by Marketing Channel | Revenue grouped by acquisition channel |
-| Customers by Campaign | Customers acquired per campaign |
-| Customer Lifetime Value by Campaign | LTV by marketing campaign |
+| Total Impressions | Total ad/content impressions across campaigns |
+| Total Clicks | Total click-throughs from campaigns |
+| Total Conversions | Conversions generated from campaigns |
+| Click-Through Rate (CTR) | Percentage of impressions that resulted in clicks |
+| Cost per Conversion (CPA) | Average cost to generate one conversion |
+| Conversions by Channel | Conversions grouped by acquisition channel |
+| Conversions by Campaign Type | Conversions segmented by campaign type |
+
+> **Note:** This dataset tracks campaign-level impressions, clicks, and conversions — not individual customer-level acquisition costs. Therefore, Customer Acquisition Cost (CAC), Return on Ad Spend (ROAS), and Customer Lifetime Value (LTV) by campaign are not supported and are excluded.
 
 ---
 
@@ -148,16 +149,17 @@ This document defines the Key Performance Indicators (KPIs) used to measure busi
 
 | KPI | Description |
 |------|-------------|
-| Churn Rate | Percentage of customers lost |
+| Churn Rate | Percentage of customers lost (observed cumulative) |
 | Customer Retention Rate | Percentage of customers retained |
-| Cohort Retention Rate | Retention by signup cohort |
-| Customer Lifetime Value (LTV) | Average revenue generated during customer lifetime |
-| Customer Lifetime | Average customer lifespan |
-| Reactivation Rate | Percentage of customers who returned after churn |
+| Cohort Churn Rate | Observed churn rate by signup cohort |
+| Customer Lifetime | Average customer lifespan (subscription duration) |
+| Churned MRR | Total MRR lost from churned customers |
 | Churn by Industry | Industry-wise churn analysis |
 | Churn by Country | Country-wise churn analysis |
 | Churn by Plan | Plan-wise churn analysis |
 | Churn Reason Distribution | Distribution of churn reasons |
+
+> **Note:** Traditional monthly retention matrices and Net Revenue Retention (NRR) require a monthly snapshot ledger, which this dataset does not provide. Cohort analysis uses observed cumulative churn methodology instead. LTV and Reactivation Rate are not supported by the current data.
 
 ---
 
@@ -170,8 +172,8 @@ This document defines the Key Performance Indicators (KPIs) used to measure busi
 | Revenue Dashboard | MRR, ARR, ARPU, Revenue Growth, Revenue by Plan |
 | Product Dashboard | Feature Adoption, Usage Duration, Error Rate |
 | Support Dashboard | Resolution Time, CSAT, Escalation Rate |
-| Marketing Dashboard | CAC, CPA, ROAS, Campaign Performance |
-| Retention Dashboard | Cohort Retention, Churn Rate, LTV |
+| Marketing Dashboard | CPA, CTR, Conversions, Campaign Performance |
+| Retention Dashboard | Cohort Churn, Churn Rate, Churned MRR |
 
 ---
 
@@ -185,7 +187,7 @@ This document defines the Key Performance Indicators (KPIs) used to measure busi
 - Annual Recurring Revenue (ARR)
 - Customer Churn Rate
 - Customer Retention Rate
-- Customer Lifetime Value (LTV)
+- Churned MRR
 - Feature Adoption Rate
 - Customer Satisfaction Score
 - Average Resolution Time

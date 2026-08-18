@@ -1,7 +1,50 @@
-# Data files
-data/raw/*
-!data/raw/marketing_campaigns.csv
-data/cleaned/
-.ipynb_checkpoints/
+# ========================
+# B2B SaaS Analytics Platform
+# ========================
+
+# --- Data Files ---
+# Note: In enterprise, data is ignored. For this portfolio project,
+# we are committing the synthetic data so recruiters can run the code.
+
+# --- Python ---
 __pycache__/
-*.pyc
+*.py[cod]
+*$py.class
+*.so
+*.egg-info/
+dist/
+build/
+*.egg
+
+# --- Jupyter ---
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+# --- Virtual Environments ---
+venv/
+.venv/
+env/
+ENV/
+
+# --- IDE & Editor ---
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# --- OS Generated ---
+.DS_Store
+Thumbs.db
+desktop.ini
+*.tmp
+
+# --- Secrets & Credentials ---
+.env
+.env.*
+*.key
+*.pem
+credentials/
+
+# --- Power BI Temp ---
+*.pbix.tmp

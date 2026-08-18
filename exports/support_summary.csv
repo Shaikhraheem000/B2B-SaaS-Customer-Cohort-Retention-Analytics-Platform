@@ -1,0 +1,5 @@
+priority,ticket_count,avg_resolution_hours,avg_csat,escalation_count
+high,510,36.96,4.0,24
+low,485,36.35,4.02,23
+medium,491,35.59,3.93,25
+urgent,514,34.57,3.97,23
